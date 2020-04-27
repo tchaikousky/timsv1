@@ -126,7 +126,7 @@
 .dashboard-inventory {
   align-self: center;
   border: 3px;
-  border-color: black;
+  border-color: yellow;
   border-style: solid;
   border-radius: 5px;
   height: 200px;
@@ -136,7 +136,7 @@
 .dashboard-red-items {
   align-self: center;
   border: 3px;
-  border-color: black;
+  border-color: yellow;
   border-style: solid;
   border-radius: 5px;
   height: 200px;
@@ -145,10 +145,35 @@
 .dashboard-green-items {
   align-self: center;
   border: 3px;
-  border-color: black;
+  border-color: yellow;
   border-style: solid;
   border-radius: 5px;
   height: 200px;
+}
+
+.inventory-table {
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+}
+.inventory-table th, td {
+  border: 1px solid black;
+}
+
+.inventory-table th {
+  background-color: chartreuse;
+}
+
+.no-items {
+  display: flex;
+  height: 200px;
+  width: 100%;
+  border: 1px solid black;
+  justify-content: center;
+}
+
+.no-items p{
+  align-self: center;
 }
 
 @media (max-width: 800px) {

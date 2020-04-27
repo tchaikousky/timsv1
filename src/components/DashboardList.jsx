@@ -5,7 +5,7 @@ function DashboardList() {
         <div className="dashboard-left">
 
         </div>
-    );
+    )
 };
 
 export default DashboardList;

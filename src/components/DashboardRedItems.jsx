@@ -23,9 +23,17 @@ function DashboardRedItems(props) {
         </table>
     
     if(redItems.length === 0) {
-        return emptyRedItems
+        return (
+            <div className="dashboard-red-items">
+                {emptyRedItems}
+            </div>
+        )
     } else {
-        return redItemList
+        return (
+            <div className="dashboard-red-items">
+                {redItemList}
+            </div>
+        ) 
     }
 };
 

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import DashboardList from './DashboardList';
-import DashboardInventory from './DashboardInventory';
-import DashboardRedItems from './DashboardRedItems';
-import DashboardGreenItems from './DashboardGreenItems';
+import DashboardLeft from './DashboardLeft';
+import DashboardRight from './DashboardRight';
 
 class DashboardMain extends Component {
     constructor(props) {
@@ -19,22 +17,30 @@ class DashboardMain extends Component {
     getInventoryData = async () => {
         const response = await fetch(`https://timsapi.herokuapp.com/inventory/${this.state.currentUser}`);
         const data = await response.json();
-        return data;
-    }
-
-    async componentDidMount() {
-        const data = await this.getInventoryData();
         const list = await this.getRedItems(data);
         this.setState({
             inventoryList: data,
             redItems: list
-        });    
+        });
+        
+        return data;
+    }
+
+    async componentDidMount() {
+        this.timer = setInterval(() => this.getInventoryData(), 1000);
+            
     };
+
+    componentWillUnmount() {
+        clearInterval(this.timer);
+        this.timer = null;
+    }
 
     getRedItems(inventoryList) {
         let redItems = [];
+        let userLowSetting = .25;
         inventoryList.forEach(item => {
-            if((item.startweight * .25) >= item.currentweight) {
+            if((item.startweight * userLowSetting ) >= item.currentweight) {
             redItems.push(item);
             }
         });
@@ -44,11 +50,9 @@ class DashboardMain extends Component {
     render() {
         return(
             <div className="dashboard-main">
-                <DashboardList />
+                <DashboardLeft />
                 <div className="dashboard-right">
-                    <DashboardInventory inventory={this.state.inventoryList} />
-                    <DashboardRedItems redItems={this.state.redItems} />
-                    <DashboardGreenItems />
+                    <DashboardRight inventoryList={this.state.inventoryList} redItems={this.state.redItems} currentUser={this.state.currentUser} itemInHand={this.state.itemInHand}/>
                 </div>
             </div>
         );

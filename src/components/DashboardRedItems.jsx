@@ -14,8 +14,8 @@ function DashboardRedItems(props) {
             </thead>
             <tbody>
                 {redItems.map(item => 
-                    <tr key={item.id}>
-                        <td>{item.productid}</td>
+                    <tr key={item.productid}>
+                        <td>{item.name}</td>
                         <td>{item.startweight}</td>
                         <td>{item.currentweight}</td>                 
                     </tr>)}
@@ -31,6 +31,9 @@ function DashboardRedItems(props) {
     } else {
         return (
             <div className="dashboard-red-items">
+                <div className="table-title">
+                    <h4>Low Quantity Items</h4>
+                </div>
                 {redItemList}
             </div>
         ) 

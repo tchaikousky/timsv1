@@ -1,11 +1,11 @@
 import React from 'react';
 
-function DashboardList() {
-    return (
+function DashboardSearchList() {
+    return(
         <div className="dashboard-left-components">
-            
-        </div>
-    )
-};
 
-export default DashboardList;
+        </div>
+    );
+}
+
+export default DashboardSearchList;

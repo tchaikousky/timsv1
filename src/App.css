@@ -99,6 +99,8 @@
 }
 
 .dashboard-left {
+  display: flex;
+  flex-direction: column;
   align-self: center;
   border: 3px;
   border-color: black;
@@ -108,6 +110,13 @@
   width: 40%;
   margin-left: 1%;
   opacity: .5;
+}
+
+.dashboard-left-components {
+  border: 3px solid yellow;
+  height: 50%;
+  width: 90%;
+  align-self: center;
 }
 
 .dashboard-right {
@@ -142,7 +151,7 @@
   height: 200px;
 }
 
-.dashboard-green-items {
+.dashboard-items-in-hand {
   align-self: center;
   border: 3px;
   border-color: yellow;
@@ -154,7 +163,7 @@
 .inventory-table {
   border: 1px solid black;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 .inventory-table th, td {
   border: 1px solid black;
@@ -162,6 +171,28 @@
 
 .inventory-table th {
   background-color: chartreuse;
+}
+
+.red-items-table {
+  border: 1px solid black;
+  width: 100%;
+  height: auto%;
+}
+
+.red-items-table th, td{
+  border: 1px solid black;
+}
+
+.red-items-table th {
+  background-color: rgb(189, 39, 39);
+}
+
+.product {
+  width: 50%;
+}
+
+.weight {
+  width: 25%;
 }
 
 .no-items {
@@ -174,6 +205,13 @@
 
 .no-items p{
   align-self: center;
+}
+
+.table-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 25%;
 }
 
 @media (max-width: 800px) {

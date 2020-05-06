@@ -4,12 +4,12 @@ import DashboardRedItems from './DashboardRedItems';
 import DashboardItemInHand from './DashboardItemInHand';
 
 function DashboardRight(props) {
-    const { inventoryList, redItems, itemInHand, currentUser } = props;
+    const { inventoryList, redItems, inHand } = props;
     return(
         <div>
             <DashboardInventory inventory={inventoryList} />
-            <DashboardRedItems redItems={redItems} />
-            <DashboardItemInHand />
+            <DashboardRedItems redItems={redItems}/>
+            <DashboardItemInHand inHand={inHand} />
         </div>
     )  
 }

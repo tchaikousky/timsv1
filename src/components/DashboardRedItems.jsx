@@ -13,11 +13,11 @@ function DashboardRedItems(props) {
                 </tr>
             </thead>
             <tbody>
-                {redItems.map(item => 
+                {redItems.map((item) =>
                     <tr key={item.productid}>
                         <td>{item.name}</td>
                         <td>{item.startweight}</td>
-                        <td>{item.currentweight}</td>                 
+                        <td>{item.currentweight}</td>                
                     </tr>)}
             </tbody>
         </table>
@@ -30,7 +30,7 @@ function DashboardRedItems(props) {
         )
     } else {
         return (
-            <div className="dashboard-red-items">
+            <div className="dashboard-red-items scrollable">
                 <div className="table-title">
                     <h4>Low Quantity Items</h4>
                 </div>

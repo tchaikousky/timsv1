@@ -12,7 +12,7 @@ function DashboardInventory(props) {
                             </thead>
                             <tbody>
                                 {inventory.map(item =>
-                                <tr key={item.productid}>
+                                <tr key= {item.id}>
                                     <td>{item.name}</td>
                                     <td>{item.startweight}</td>
                                     <td>{item.currentweight}</td>                 
@@ -20,7 +20,7 @@ function DashboardInventory(props) {
                             </tbody>
                           </table>
     return (
-        <div className="dashboard-inventory">
+        <div className="dashboard-inventory scrollable">
             <div className="table-title">
                 <h4>All Items</h4>
             </div>

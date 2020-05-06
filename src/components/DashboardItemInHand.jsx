@@ -1,8 +1,8 @@
 import React from 'react';
 
-function DashboardInventory(props) {
-    const { inventory } = props;
-    const inventoryList = <table className="inventory-table">
+function DashboardItemInHand(props) {
+    const { inHand } = props;
+    const inventoryList = <table className="item-in-hand-table">
                             <thead>
                                 <tr>
                                     <th className="product">Product</th>
@@ -11,22 +11,22 @@ function DashboardInventory(props) {
                                 </tr>
                             </thead>
                             <tbody>
-                                {inventory.map(item =>
-                                <tr key= {item.id}>
+                                {inHand.map(item =>
+                                <tr key={item.productid}>
                                     <td>{item.name}</td>
                                     <td>{item.startweight}</td>
-                                    <td>{item.currentweight}</td>                 
+                                    <td>???</td>                 
                                 </tr>)}
                             </tbody>
-                          </table>
+                        </table>
     return (
-        <div className="dashboard-inventory scrollable">
-            <div className="table-title">
-                <h4>All Items</h4>
+        <div className="dashboard-items-in-hand">
+            <div className="table-title scrollable">
+                <h4>Items In Use</h4>
             </div>
             {inventoryList}
         </div>
     );
 };
 
-export default DashboardInventory;
+export default DashboardItemInHand;
